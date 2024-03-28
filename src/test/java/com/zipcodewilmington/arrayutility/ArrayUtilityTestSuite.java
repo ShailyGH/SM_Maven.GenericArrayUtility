@@ -15,5 +15,7 @@ import org.junit.runners.Suite;
         GetNumberOfOccurrencesTest.class,
         RemoveValueTest.class
 })
-public class ArrayUtilityTestSuite {
+public class ArrayUtilityTestSuite
+{
+    
 }
