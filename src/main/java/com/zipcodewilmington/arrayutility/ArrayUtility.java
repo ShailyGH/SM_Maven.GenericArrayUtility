@@ -51,7 +51,29 @@ public class ArrayUtility<obj> {
 
     public obj getMostCommonFromMerge(obj[] arrayToMerge)
     {
-        return null;
+        ArrayUtility<obj> tempArrayList = new ArrayUtility<>(arrayToMerge);
+        Map<obj, Integer> countMatches = new HashMap<>();
+        obj val = null;
+        int numberOfOccurances = 0;
+        int commonOccurrancesVal = 0;
+        obj commonValueKey = null;
+
+        for (obj o : arrayToMerge)
+        {
+            numberOfOccurances = tempArrayList.getNumberOfOccurrences(o) + this.myMap.get(o);
+            countMatches.put(o, numberOfOccurances);
+        }
+
+        for(Map.Entry<obj, Integer> e : countMatches.entrySet())
+        {
+            if(e.getValue() > commonOccurrancesVal)
+            {
+                commonValueKey = e.getKey();
+                commonOccurrancesVal = e.getValue();
+            }
+        }
+
+        return commonValueKey;
     }
 
     public obj[] removeValue(obj valueToRemove)
