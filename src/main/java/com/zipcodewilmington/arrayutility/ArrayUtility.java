@@ -78,8 +78,23 @@ public class ArrayUtility<obj> {
 
     public obj[] removeValue(obj valueToRemove)
     {
-        return null;
+        ArrayList<obj> tempArrayList = new ArrayList<>();
 
+        for(obj o : myList)
+        {
+            if(!o.equals(valueToRemove))
+            {
+                tempArrayList.add(o);
+            }
+        }
+
+        myList.clear();
+        myList.addAll(tempArrayList);
+
+        obj[] val = (obj[]) Array.newInstance(myList.get(0).getClass(), myList.size());
+
+        myList.toArray(val);
+        return val;
     }
 
 }
