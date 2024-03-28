@@ -96,5 +96,4 @@ public class ArrayUtility<obj> {
         myList.toArray(val);
         return val;
     }
-
 }
